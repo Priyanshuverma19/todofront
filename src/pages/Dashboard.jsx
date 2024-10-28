@@ -21,7 +21,7 @@ function Dashboard() {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/todos`, {
+      const response = await axios.get(`https://todobackend-2-vomv.onrender.com/api/todos`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -40,7 +40,7 @@ function Dashboard() {
       // Update existing todo
       try {
         const response = await axios.put(
-          `http://localhost:5000/api/todos/${editingTodo._id}`,
+          `https://todobackend-2-vomv.onrender.com/api/todos/${editingTodo._id}`,
           { text: newTodo },
           {
             headers: {
@@ -63,7 +63,7 @@ function Dashboard() {
       // Create new todo
       try {
         const response = await axios.post(
-          `http://localhost:5000/api/todos`,
+          `https://todobackend-2-vomv.onrender.com/api/todos`,
           { text: newTodo },
           {
             headers: {
@@ -82,7 +82,7 @@ function Dashboard() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/todos/${id}`, {
+      await axios.delete(`https://todobackend-2-vomv.onrender.com/api/todos/${id}`, {
         headers: {
           Authorization: `Bearer ${user.token}`,
         },
@@ -98,7 +98,7 @@ function Dashboard() {
     try {
       const todo = todos.find((t) => t._id === id)
       const response = await axios.put(
-        `http://localhost:5000/api/todos/${id}`,
+        `https://todobackend-2-vomv.onrender.com/api/todos/${id}`,
         {
           completed: !todo.completed,
         },
